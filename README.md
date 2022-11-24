@@ -18,4 +18,6 @@ SPRING_DATA_MONGODB_URL=mongodb://gamification-mongo:27017/gamification
 python3 ./Gamification-Engine-Settings/config.py localhost:8010
 ```
 
-The script will prompt you to enter the username and password entered during the gamification engine setup.
+    The script will prompt you to enter the username and password entered during the gamification engine setup.
+
+3. In the Unity project open the file `Assets/ConfigurationFiles/GamificationEngineConfiguration.asset` in the Inspector. Enter the base URL, username, password, and GameId (if changed from the default value in the configuration script run in Step 2).
