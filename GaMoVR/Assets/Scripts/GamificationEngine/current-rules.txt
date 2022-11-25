@@ -1,0 +1,272 @@
+[
+  {
+    "id": "62279b3608813b000102eabb",
+    "content": "package eu.trentorise.game.model
+import java.util.ArrayList;
+declare AlreadyLevelUp
+end
+
+declare SingleGame
+   level : Double
+   won: Boolean
+end
+
+
+rule \"startNewLevel\"
+when
+      Action( id == 'startNewLevel')
+       InputData(
+        $initialLives : data['initialLives'],
+        $currentLevelId: data['levelID']
+    )
+
+    $lives : PointConcept(name == \"lives\")
+    $customData: CustomData()
+
+    not AlreadyLevelUp()
+then
+double lives = (double) $initialLives;
+double level = (double) $currentLevelId;
+
+modify($lives) { setScore(lives); } // update the counter   
+
+ SingleGame g = new SingleGame(level,false);
+ if((ArrayList<SingleGame>)$customData.get(\"playedGames\") == null){
+    //add first element
+  ArrayList<SingleGame> games  = new ArrayList<SingleGame>();
+  games.add(g); 
+  $customData.put(\"playedGames\", games);
+ }
+else {
+// some games already played
+ArrayList<SingleGame> games = (ArrayList<SingleGame>)$customData.get(\"playedGames\");
+ArrayList<SingleGame> newGames = new ArrayList<SingleGame>();
+System.out.println(\"giochi prima: \"+games);
+Boolean found = false;
+for(int i=0;i<games.size();i++)
+{
+Map currentGame = (Map)games.get(i);
+Double currentLevel = (Double)currentGame.get(\"level\");
+Boolean currentWon = (Boolean)currentGame.get(\"won\");
+
+if(currentLevel == level)
+{
+//update the found game
+ SingleGame g1 = new SingleGame(level,false);
+ newGames.add(g1);
+ found = true;
+}
+else {
+SingleGame g1 = new SingleGame(currentLevel,currentWon); 
+ newGames.add(g1);
+}
+} // end for cycle
+
+if(!found){
+ System.out.println(\"non trovato devo aggiungerlo\");
+ SingleGame g1 = new SingleGame(level,false);
+ newGames.add(g1);
+
+}
+System.out.println(\"giochi dopo: \"+newGames);
+$customData.put(\"playedGames\", newGames);
+
+
+}
+
+update($customData);
+insert(new AlreadyLevelUp());
+end",
+    "name": "startNewLevel"
+  },
+  {
+    "id": "6230fa4108813b000102ead2",
+    "content": "package eu.trentorise.game.model
+import java.util.ArrayList;
+declare AlreadyLevelUp
+end
+
+declare SingleGame
+   level : Double
+   won: Boolean
+   remainingLivesUponCompletion: Double
+end
+
+rule \"finishGame\"
+when
+      Action( id == 'finishGame')
+ InputData(
+        $newXP : data['xp'],
+        $currentLevelId: data['levelID'],
+        $won: data['won'],
+        $remainingLives: data['remainingLivesUponCompletion']
+    )
+    $xp: PointConcept(name==\"xp\")
+    $customData: CustomData()
+    not AlreadyLevelUp()
+
+then
+double newXP = (double)$newXP;
+$xp.setScore($xp.getScore()+newXP);
+
+double level = (double) $currentLevelId;
+Boolean won = (Boolean)$won;
+double remainingLivesUponCompletion = (double) $remainingLives;
+
+ SingleGame g = new SingleGame(level,won,remainingLivesUponCompletion);
+ if((ArrayList<SingleGame>)$customData.get(\"playedGames\") == null){
+    //add first element
+  ArrayList<SingleGame> games  = new ArrayList<SingleGame>();
+  games.add(g); 
+  $customData.put(\"playedGames\", games);
+ }
+else {
+// some games already played
+ArrayList<SingleGame> games = (ArrayList<SingleGame>)$customData.get(\"playedGames\");
+ArrayList<SingleGame> newGames = new ArrayList<SingleGame>();
+System.out.println(\"giochi prima: \"+games);
+Boolean found = false;
+for(int i=0;i<games.size();i++)
+{
+Map currentGame = (Map)games.get(i);
+Double currentLevel = (Double)currentGame.get(\"level\");
+Boolean currentWon = (Boolean)currentGame.get(\"won\");
+Double currentLives = (Double)currentGame.get(\"remainingLivesUponCompletion\");
+
+if(currentLevel == level)
+{
+//update the found game
+ SingleGame g1 = new SingleGame(level,won,remainingLivesUponCompletion);
+ newGames.add(g1);
+ found = true;
+}
+else {
+SingleGame g1 = new SingleGame(currentLevel,currentWon,currentLives); 
+ newGames.add(g1);
+}
+} // end for cycle
+
+if(!found){
+ System.out.println(\"non trovato devo aggiungerlo\");
+ SingleGame g1 = new SingleGame(level,won,remainingLivesUponCompletion);
+ newGames.add(g1);
+
+}
+System.out.println(\"giochi dopo: \"+newGames);
+$customData.put(\"playedGames\", newGames);
+
+
+}
+
+update($customData);
+
+
+insert(new AlreadyLevelUp());
+end",
+    "name": "finishGame"
+  },
+  {
+    "id": "6230fa5508813b000102ead3",
+    "content": "package eu.trentorise.game.model
+declare AlreadyLevelUp
+end
+
+rule \"reduceLives\"
+when
+      Action( id == 'executedWrongMove')
+
+    $lives : PointConcept(name == \"lives\")
+
+    not AlreadyLevelUp()
+then
+$lives.setScore($lives.getScore()-1.0);
+
+insert(new AlreadyLevelUp());
+end",
+    "name": "reduceLives"
+  },
+  {
+    "id": "623d76db08813b000102eaf6",
+    "content": "package eu.trentorise.game.model
+import java.util.ArrayList;
+declare AlreadyLevelUp
+end
+
+declare UnlockedElement
+   key : String
+   name: String
+end
+
+
+rule \"unlockElement\"
+when
+      Action( id == 'unlockElement')
+       InputData(
+             $key : data['key'],
+                $name: data['name']
+    )
+
+
+    $customData: CustomData()
+
+    not AlreadyLevelUp()
+then
+String key = (String)$key;
+String name = (String)$name;
+
+UnlockedElement ue = new UnlockedElement(key,name);
+
+ if((ArrayList<UnlockedElement>)$customData.get(\"unlockedElements\") == null){
+    // no unlocked elements - add the first element
+  ArrayList<UnlockedElement> ues  = new ArrayList<UnlockedElement>();
+  ues.add(ue); 
+  $customData.put(\"unlockedElements\", ues);
+ }
+else {
+// some elements already unlocked
+ArrayList<UnlockedElement> elements = (ArrayList<UnlockedElement>)$customData.get(\"unlockedElements\");
+ArrayList<UnlockedElement> newElements = new ArrayList<UnlockedElement>();
+System.out.println(\"elementi prima: \"+elements);
+Boolean found = false;
+for(int i=0;i<elements.size();i++)
+{
+Map currentElement = (Map)elements.get(i);
+String currentKey = (String)currentElement.get(\"key\");
+String currentName = (String)currentElement.get(\"name\");
+System.out.println(\"TOTO: \"+currentKey);
+System.out.println(\"KEY: \"+key);
+
+
+if(currentKey.equalsIgnoreCase(key))
+{
+//update the found element
+System.out.println(\"EEEEEEEEEEEEE\");
+ UnlockedElement e1 = new UnlockedElement(key,name);
+ newElements.add(e1);
+ found = true;
+}
+else {
+UnlockedElement e1 = new UnlockedElement(currentKey,currentName); 
+ newElements.add(e1);
+}
+} // end for cycle
+
+if(!found){
+ System.out.println(\"non trovato devo aggiungerlo\");
+ UnlockedElement e1 = new UnlockedElement(key,name);
+ newElements.add(e1);
+
+}
+System.out.println(\"elementi dopo: \"+newElements);
+$customData.put(\"unlockedElements\", newElements);
+
+
+}
+
+
+update($customData);
+insert(new AlreadyLevelUp());
+end",
+    "name": "unlockElement"
+  }
+]
