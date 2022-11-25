@@ -1,0 +1,100 @@
+<Model>
+    <Classes>
+        <Class className="Hull" xPosition="0" yPosition="1" zPosition="0">
+        </Class>
+        <Class className="CargoBay" xPosition="0" yPosition="1" zPosition="5">
+            <Property propertyName="storageCapacity" isCreated="true"></Property>
+        </Class>
+        <Class className="Cockpit" xPosition="5" yPosition="1" zPosition="0">
+            <Property propertyName="crewCapacity" isCreated="true"></Property>
+            <Method methodName="enter()" isCreated="true"></Method>
+            <Method methodName="takePilotPosition()" isCreated="true"></Method>
+        </Class>
+        <Class className="FuelTank" xPosition="5" yPosition="1" zPosition="5">
+        </Class>
+        <Class className="Pilot" xPosition="10" yPosition="1" zPosition="0" isCorrect="false">
+        </Class>
+        <Class className="Planet" xPosition="-5" yPosition="1" zPosition="0" isCorrect="false">
+        </Class>
+    </Classes>
+    <Connectors>
+        <DirectedAssociation
+            origin="Hull" 
+            target="Planet"
+            description="lands on" 
+            isCreated="true"
+            isCorrect="false"
+            originAttachXPosition="-0.5"
+            originAttachYPosition="1"
+            originAttachZPosition="0"
+            targetAttachXPosition="-4.5"
+            targetAttachYPosition="1"
+            targetAttachZPosition="0"
+        ></DirectedAssociation>
+        <DirectedAssociation
+            origin="Pilot" 
+            target="Cockpit"
+            description="sits in" 
+            isCreated="true"
+            isCorrect="false"
+            originAttachXPosition="9.5"
+            originAttachYPosition="1"
+            originAttachZPosition="0"
+            targetAttachXPosition="5.51"
+            targetAttachYPosition="1"
+            targetAttachZPosition="0"
+        ></DirectedAssociation>
+        <Composition
+            origin="CargoBay" 
+            target="Hull"
+            description="" 
+            isCreated="true"
+            isCorrect="true"
+            originAttachXPosition="0"
+            originAttachYPosition="1"
+            originAttachZPosition="4.5"
+            targetAttachXPosition="0"
+            targetAttachYPosition="1"
+            targetAttachZPosition="0.5"
+        ></Composition>
+        <Composition 
+            origin="Cockpit" 
+            target="Hull" 
+            description=""
+            isCreated="true"
+            isCorrect="true"
+            originAttachXPosition="4.5"
+            originAttachYPosition="1"
+            originAttachZPosition="0"
+            targetAttachXPosition="0.5"
+            targetAttachYPosition="1"
+            targetAttachZPosition="0"
+        ></Composition>
+        <Composition
+            origin="FuelTank" 
+            target="Hull" 
+            description=""
+            isCreated="true"
+            isCorrect="true"
+            originAttachXPosition="4.5"
+            originAttachYPosition="1"
+            originAttachZPosition="5"
+            targetAttachXPosition="0"
+            targetAttachYPosition="1"
+            targetAttachZPosition="0.5"
+        ></Composition>
+        <Inheritance
+            origin="Cockpit"
+            target="FuelTank"
+            description=""
+            isCreated="true"
+            isCorrect="false"
+            originAttachXPosition="5"
+            originAttachYPosition="1"
+            originAttachZPosition="0.56"
+            targetAttachXPosition="5"
+            targetAttachYPosition="1"
+            targetAttachZPosition="4.5"
+        ></Inheritance>
+    </Connectors>
+</Model>

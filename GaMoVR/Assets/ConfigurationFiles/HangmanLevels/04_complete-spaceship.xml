@@ -1,0 +1,30 @@
+<Model>
+    <Classes>
+        <Class className="Spaceship" xPosition="0" yPosition="1" zPosition="0">
+        </Class>
+        <Class className="Hull" xPosition="0" yPosition="1" zPosition="5">
+        </Class>
+        <Class className="Engine" xPosition="5" yPosition="1" zPosition="0">
+            <Property propertyName="powerOutput"></Property>
+            <Property propertyName="fuelConsumption"></Property>
+            <Method methodName="start()"></Method>
+        </Class>
+        <Class className="WeaponSystem" xPosition="5" yPosition="1" zPosition="5">
+        </Class>
+        <Class className="FuelTank" xPosition="10" yPosition="1" zPosition="0">
+            <Property propertyName="capacity"></Property>
+        </Class>
+        <Class className="Freighter" xPosition="-5" yPosition="1" zPosition="0">
+        </Class>
+        <Class className="Pilot" xPosition="-5" yPosition="1" zPosition="5">
+        </Class>
+    </Classes>
+    <Connectors>
+        <Composition origin="Hull" target="Spaceship" description=""></Composition>
+        <Aggregation origin="WeaponSystem" target="Spaceship" description=""></Aggregation>
+        <Aggregation origin="FuelTank" target="Hull" description=""></Aggregation>
+        <Inheritance origin="Freighter" target="Spaceship" description=""></Inheritance>
+        <Aggregation origin="Engine" target="Spaceship" description=""></Aggregation>
+        <DirectedAssociation origin="Pilot" target="Spaceship" description="pilots"></DirectedAssociation>
+    </Connectors>
+</Model>

@@ -1,0 +1,54 @@
+{
+    "name": "UIActivationInput",
+    "maps": [
+        {
+            "name": "UIActivation",
+            "id": "63763730-3ecd-4c22-b182-284f71c1bd7b",
+            "actions": [
+                {
+                    "name": "LeftHandUIActivation",
+                    "type": "Button",
+                    "id": "a0472c8e-2f18-4cba-bb6d-2e03069ec03a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightHandUIIActivation",
+                    "type": "Button",
+                    "id": "a483931f-65db-4ee0-850d-360abe25609f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c4936ce9-5d8b-4866-ae8e-74d572fbd792",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandUIActivation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6993e740-27b6-4fb3-a9ed-03b658a7299d",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandUIIActivation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

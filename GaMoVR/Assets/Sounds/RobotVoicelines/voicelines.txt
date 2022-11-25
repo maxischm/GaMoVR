@@ -1,0 +1,351 @@
+First Time in Lobby:
+Welcome to the gamified learning environment for UML modeling. This space station is the headquarters on your journey to training your UML modeling skills. From here you can start different games to practice modeling.
+<break time="0.5s"/>
+The level selection can be done on the interface next to me.
+<break time="0.5s"/>
+To unlock new elements, see your overall X P, or revisit some U M L connection explanations, click on the Profile button.
+<break time="0.5s"/>
+To interact with it, you must teleport into the highlighted zone.
+
+
+Return to Lobby:
+Welcome back player.
+
+
+Return to Lobby with Unlocks available:
+Welcome back player.
+<break time="0.5s"/>
+You have still have some unlocks available.
+
+
+Game Selection:
+This learning environment contains two games. The first is a puzzle game based on the popular game hangman. In the other, you can construct your own spaceship. This second game is unlocked after you successfully finish three rounds of hangman.
+
+
+Level Selection:
+Here, you can select the hangman level you want to play. There are three different modes. <break time="0.5s"/> The mode of the currently selected level is shown on the top of the panel. 
+<break time="0.5s"/>
+There is the classic mode, where you puzzle the UML model without making more mistakes than you have lives. 
+<break time="0.5s"/>
+There is the Against the clock mode, where you must finish the level in a certain time limit. 
+<break time="0.5s"/>
+And there is the test mode, where you have to find mistakes in a model and remove the wrong UML elements.
+<break time="0.5s"/>
+Also at the top, you find whether you already played a level. And, if you played it, what your last score was.
+<break time="0.5s"/> 
+Next to the list of levels, you find a description of the task of the level.
+<break time="0.5s"/> 
+Some levels are still locked because you have to unlock the required UML elements first.
+<break time="0.5s"/> 
+To start a game, click on the button in the bottom right corner.
+
+
+Level Locked Notify:
+This level is still locked. Check under Profile if you can unlock the required elements.
+
+
+Profile Overview Explanation:
+In this overview, you can unlock different U M L connections.
+<break time="0.5s"/>
+After you unlock a new connection type, new levels might become available.
+<break time="0.5s"/>
+At the top, you can see all X P you earned while playing. For winning a level, you always get 200 X P. You also can unlock a new element every 200 X P you earn.
+
+
+______________________________________________________________________________
+
+
+Tutorial Introduction:
+Welcome player, to the tutorial of hangman.
+<break time="0.4s"/>Your goal is to puzzle a correct UML model based on a description without making more mistakes than you have lives. To check the number of lives you have left, turn you hand such that your palm points up and look at your wrist.
+<break time="0.4s"/>To create the model, you can find everything you need around you on this plane. In front of you, you can find all the classes required for the model. 
+<break time="0.4s"/>To your right, you can see a set of associations with labels and reading directions. You can use these to connect the classes.
+And behind you, you find all attributes and methods each on a small plate for you to grab and move.
+<break time="0.4s"/>Let's now try to connect two classes via an association. First, teleport to one of the associations and grab it in the middle.
+
+
+Tutorial Connection 1:
+Great, you can now move the association wherever you want. How about moving it between the classes House and Room? To attach the association to the classes, grab the end of the association and place the end inside of one of the classes. Make sure you connect the correct end according to the description and reading direction of the association. If you connected the correct end, you will hear a sound to notify success and the end of the association is highlighted in green. If you connected the wrong end, you are notified with a sound, the end of the association is highlighted in red, and one of your lives breaks.
+
+
+Tutorial Connection 2:
+Next, connect the second end to the other class.
+
+
+Tutorial Connection 3:
+Congratulations! You have successfully connected your first two classes with an association.
+Let us now add some attributes and functions to the classes. For that, teleport to the group of small plates and grab any one you like.
+
+
+Tutorial Features 1:
+Awesome, now think about which class your plate could belong to and teleport to that class. After you teleported to the class, try sticking the plate into the side of the class and let go. If your placement was correct, you will hear the success sound again and the text will be added to the class. If your decision was not correct, you will again lose a life.
+
+
+Tutorial Features 2 (Method):
+Congratulations, you have now added your first method to a class. To continue with the rest of the level, you can open the task description by clicking the upper button on your right hand controller. Good luck!
+
+
+Tutorial Features 2 (Attribute):
+Congratulations, you have now added your first attribute to a class. To continue with the rest of the level, you can open the task description by clicking the upper button on your right hand controller. Good luck!
+
+
+Against The Clock Introduction:
+Welcome to the Against the Clock Mode. Behind me you see the gallows with a timer above it. The timer shows the time you have left to complete the level. 
+<break time="0.6s"/>
+You can create the model the same way as in the classic mode. To get more time to complete the model, targets spawn around you that you can destroy. If you place one of your hands next to one of your hips and press the grab button, you spawn a pistol in your hand with which you can shoot the targets. 
+<break time="0.6s"/>
+For each destroyed target you get an additional 30 seconds.
+
+
+Test Mode Introduction:
+Welcome to the Test Mode. Here you get a complete model containing errors. If you carefully read the task description, you will notice objects in the model that are not correct, do not make sense, or are unnecessary additions and can, therefore, be removed. To remove classes, you can use the pistols accessible on your hips. To destroy connections, you can use the sword you get by placing a hand behind your head and pressing the grab button.
+
+
+______________________________________________________________________________
+
+
+Method Validation Failed:
+Make sure that the task description mentions this method for the class you tried to attach it to!
+
+Property Validation Failed:
+Make sure that the task description mentions this property for the class you tried to attach it to!
+
+Connection Validation Failed (NoSuchConnectorConnectedToClass):
+Make sure that this connector type is the correct one for this class!
+
+Connection Validation Failed (NoSuchConnectorWithOneEndToClass):
+Make sure that you attached the correct end of the connector to the class!
+
+Connection Validation Failed (NoSuchConnectorWithBothEndsToClass):
+Make sure that you attached the correct end of the connector to the class!
+
+Connection Validation Failed (NoConnectorBetweenTheseClasses):
+Make sure that these two classes are really connected by that connector.
+
+Connection Validation Failed (AllConnectionsAlreadyAttachedExactMatch):
+There are no more remaining connections of that type between these classes. Try connecting to a different one.
+
+Connection Validation Failed (AllConnectionsOfTypeWithThatEndAlreadyAttached):
+No more connections of that type and that end remain for this class.
+
+
+______________________________________________________________________________
+
+
+Association Explanation:
+Associations between classes are basic links. They connect classes that can communicate with each other. <break time="0.5s"/>An association has a label and a reading direction to better express the relation between two classes.
+
+Aggregation Explanation:
+Aggregations describe a relation between a part and the whole. But, the part can exist without the whole.<break time="0.5s"/> For example, an engine is part of a car. But, the engine can exist without the car. The classes Car and Engine would be connected with an aggregation. <break time="0.5s"/> The diamond of the aggregation is connected to the whole.
+
+Composition Explanation:
+Compositions describe a relation between a part and a whole. But, the can <emphasis level="strong">not</emphasis> exist without the whole.<break time="0.5s"/>  For example, a Room can <emphasis level="strong">not</emphasis> exist without a building. The room and the building would be connected with a composition. <break time="0.5s"/> The black diamond is attached to the whole.
+
+Inheritance Explanation:
+Inheritance relationships describe parent child relations. A parent is a <emphasis level="strong">superclass</emphasis>, and a child is a <emphasis level="strong">subclass</emphasis>. The child inherits all attributes and operations from the parent. The filled triangle points at the <emphasis level="strong">parent</emphasis> class.
+
+
+______________________________________________________________________________
+
+
+Classic Mode Explanation:
+In the Classic Mode, you must create the model according to the model description. You can find the description by pressing the upper button on the controller in your right hand. 
+<break time="0.6s"/>
+While creating the model you can only make a certain number of mistakes. For every mistake you lose a life, and the hangman is built further. 
+<break time="0.6s"/>
+Your remaining lives are visible on your right hand.
+
+
+Against the clock mode Explanation:
+Here, you play against the clock. Your goal is to create the model according to the task description. You can find the description by pressing the upper button on the controller in your right hand. 
+<break time="0.6s"/>
+You must finish the model before you run out of time. 
+<break time="0.6s"/>
+You can earn more time by shooting the targets around you with the pistol you can grab from the sphere on your hips.
+
+
+Test Mode Explanation:
+In this level, you find a complete model that contains errors. 
+<break time="0.6s"/>
+You must find these errors by carefully reading the task description and double checking the model if relations or classes make sense. 
+<break time="0.6s"/>
+To destroy a wrong class, grab a pistol from the sphere at your hips. 
+<break time="0.6s"/>
+To destroy a wrong connection, grab the sword from your back and hit the connection with it. 
+<break time="0.6s"/>
+For every element that is correct in the model, but, you destroy, you lose a life. You find your remaining lives on your right hand.
+
+
+______________________________________________________________________________
+
+
+Controls Explanation:
+You can open and close the task description by pressing the upper button on your right hand controller.
+<break time="0.5s"/>
+With the lower button on your right hand controller, you can switch to flight mode. In flight mode, you can move around with the joysticks on your controllers.
+
+
+Lobby What Do I Do?
+You can open the Hangman level list and check for levels you have not played. 
+<break time="1s"/>
+Maybe you can unlock new U M L elements by clicking on the Profile button. 
+<break time="1s"/>
+Or, you can explore the Build your spaceship mode if you already unlocked it. Feel free to explore and try out everything.
+
+
+______________________________________________________________________________
+
+
+Retry Tutorial Suggestion:
+How about you try the Tutorial again. I am sure you can do it this time!
+
+
+Retry 2nd Level:
+How you about you try the second level again. I know you can model the rough spaceship structure!
+
+
+Retry 3rd Level:
+Hey, why not try complete the third level. The weapon systems are very interesting and not that hard!
+
+
+Retry 4th Level:
+If you don't know what to do next, how about trying your best with the fourth level, completing the spaceship again?
+
+
+Retry 5th Level:
+With all you know, I am sure you can win in the last level this time!
+
+
+New Levels Available Message:
+You have new levels available! How about checking them out?
+
+
+______________________________________________________________________________
+
+
+Building Mode Introduction 1:
+Welcome to the building mode where you can build your own spaceship. I will now guide you through the first steps to build your spaceship. Note that you can either create a U M L class diagram, or use 3D models to construct the spaceship.
+<break time="0.5s"/>
+First, let us spawn a cockpit which will be the core of the spaceship. For that, teleport into the highlighted zone on this platform and click on the button Spawn Cockpit.
+
+
+Building Mode Introduction 2:
+Great!
+<break time="0.5s"/> 
+If you now look behind you in the hangar, you will find a spaceship.
+<break time="0.5s"/>
+But, you can also find a class created on the left side of the hangar. This is the U M L class for the cockpit. The classes you will create here, and the 3 D model will always be synchronized.
+<break time="1s"/>
+Next, we can add wings to the spaceship. We will do this by manipulating the U M L model. If you press the upper button on your right hand, a small menu will appear in front of you.
+
+
+Building Mode Introduction 3:
+In this menu, click on the button <break time="0.3s"/> Spawn Class for Wing.
+
+
+Building Mode Introduction 4:
+In front of you, a class called Wing spawned. But also a 3 D model of a wing.
+<break time="0.3s"/>
+Look around the hangar to make sure its there.
+<break time="0.8s"/>
+Now, how about connecting the cockpit and the wing?
+<break time="0.3s"/>
+You can either create the connection in the U M L diagram, <break time="0.3s"/> or with the 3 D models.
+<break time="0.4s"/>
+If you want to create the connection in the U M L diagram, open the menu with your controller again and select <break time="0.4s"/>Spawn Association.
+<break time="0.5s"/>
+The association in front of you can be connected to the two classes just like in the Hangman game.
+<break time="1s"/>
+If you want to create the connection in the 3 D model, teleport to the wing, <break time="0.3s"/> grab it, <break time="0.3s"/>and stick it into the cockpit.
+
+
+Building Mode Introduction 5:
+Congratulations! You attached your first two objects! 
+<break time="0.5s"/>
+Whichever way you chose to connect the two parts, the other representation will always correspond to the changes.
+<break time="0.4s"/>
+If you want to remove any of the objects, you can shoot them like you did in the test mode of hangman.
+<break time="0.4s"/>
+If you want to detach two parts, you can pull the 3 D models apart, <break time="0.3s"/> or cut the connection in the U M L model.
+<break time="1s"/>
+Awesome! <break time="0.5s"/> You now know everything you need to add more parts to your spaceship, <break time="0.3s"/> rearrange them, or simply play around with.
+<break time="0.7s"/>
+Remember. For some classes, you can have multiple instances. These can be spawned from the interface next to me.
+<break time="0.7s"/>
+If you have any more questions, you can always press the button on my chest.
+
+
+Building Mode Explanation:
+The goal of this level is to show you how a U M L class diagram and a 3 D model correspond. You can build a spaceship by either constructing a U M L diagram or building with 3 D objects. The two options will always be synchronized.
+<break time="0.6s"/>
+Note that the U M L side can only have one class per part type. <break time="0.5s"/> This means that, to have multiple wings on your spaceship, you must spawn them from the panel next to me. You can explore how the two parts correspond to deepen your understanding of how U M L class diagrams work.
+
+
+Building Mode Cockpit Limit Reached:
+Sorry, <break time="0.3s"/> you reached the maximum number of cockpits available in this demo.
+
+
+Building Mode Wing Limit Reached:
+Sorry, <break time="0.3s"/> you reached the maximum number of wings available in this demo.
+
+
+Building Mode Engine Limit Reached:
+Sorry, <break time="0.3s"/> you reached the maximum number of engines available in this demo.
+
+
+Building Mode Cannon Part Limit Reached:
+Sorry, <break time="0.3s"/> you reached the maximum number of cannons available in this demo.
+
+
+Building Mode Class Already exists:
+A class for this spaceship part already exists. You cannot have multiple classes for the same part in one UML model.
+
+
+How To Spawn 3D Objects:
+To spawn 3 D objects, teleport into the highlighted zone next to me. From the interface, you can spawn four different types of objects.
+<break time="0.3s"/>
+A cockpit, <break time="0.3s"/> wings, <break time="0.3s"/> engines, <break time="0.3s"/> or cannons.
+<break time="0.3s"/>
+Note that in this small demo, the number for each type is limited.
+
+
+How To Spawn UML Elements:
+To spawn U M L classes, press the upper button on your right hand.
+<break time="0.3s"/>
+A menu will appear in front of you where you can spawn classes for each spaceship part.
+<break time="0.3s"/>
+Note that you can only spawn one class per type. <break time="0.3s"/> In U M L class diagrams, it does not make sense to have multiple classes for the same thing.
+<break time="0.3s"/>
+In the menu, you can also spawn associations to connect the U M L classes.
+
+
+How To Destroy Elements:
+To destroy connections between classes, grab the sword from behind your head, and cut the associations with it.
+<break time="0.3s"/>
+To destroy classes, grab a pistol from your hips and shoot them.
+<break time="0.3s"/>
+To destroy connections in the 3 D objects, grab the part you want to separate and move it away from the other part.
+<break time="0.3s"/>
+To destroy 3 D objects, shoot them with the pistols you can grab from your hips.
+
+
+Build Mode Controls Explanation:
+You can open and close the task description by pressing the upper button on your right hand controller. <break time="0.5s"/> With the lower button on your right hand controller, you can switch to flight mode. In flight mode, you can move around with the joysticks on your controllers.
+<break time="0.5s"/>
+You can grab all spaceship parts and U M L elements to build the spaceship. Associations can be connected to classes by grabbing the end of the association and placing it inside the class object.
+
+
+Forbidden Connection Warning:
+Note, this connection is not allowed in this demo! Please try a different one.
+
+
+Build Mode Explanation - Spawn second part w/ first attached to something:
+The 3 D object you just spawned might be automatically attached to some other part due to a connection between the two corresponding classes. Check the U M L model if you are not sure about all the existing connections.
+
+
+Build Mode Explanation - Delete UML Connection => Attach free parts due to other connection in UML:
+After you deleted the connection, some parts might have been connected to other existing parts due to connections in the U M L diagram.
+
+
+Build Mode Explanation - Delete UML Class => Attach free parts due to other connection in UML:
+After deleting that class, some parts might have been attached somewhere else due to other connections in the U M L diagram.
