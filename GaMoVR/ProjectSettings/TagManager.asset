@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - LocalPlayer
+  - Calibration
+  - OpenXRPlayerCameraChild
+  - ThrowingGameBucket
+  - ThrowingGameBasket
+  - LevelBoarder
+  - OpenXRRightHand
+  - OpenXRLeftHand
+  - UmlClassCanvas
+  - UmlClass
+  - Gun
+  - Sword
+  - Wing
+  - Cannon
+  - Whiteboard
+  - Thruster
+  - ShipBody
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - PostProcess
+  - Water
+  - UI
+  - doNotRender
+  - RenderOnTop
+  - Teleport
+  - BlockAllExceptTeleport
+  - RealtimeLighting
+  - Whiteboard
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

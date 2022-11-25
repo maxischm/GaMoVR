@@ -1,0 +1,82 @@
+Level 0:
+In this tutorial level, you will create a simple UML model of a house.
+<br>
+<br>
+For this, you can find three classes. <i>House</i>, <i>Room</i>, and <i>Wall</i>. A house can be classified by its <i>livingSpace</i>, but it can also be <i>bought</i>, <i>sold</i>, or the <i>owner</i> be found out. (The owner is also one of its properties.)
+<br>
+<br>
+A house <i>has</i> rooms
+<br>
+Finally, a room <i>has</i> walls and a <i>purpose</i>.
+
+--------------------------------
+
+Level 1:
+After you have completed the tutorial we will now model a spaceship.
+<br>
+In this level, you will model a very rough overview of the different parts a spaceship consists of.
+<br>
+Some of the relationships between parts will be updated in later levels after you unlock new UML connectors.
+<br>
+The spaceship <i>has</i> different elements like a Hull, an Engine, a Weapon System, and a Fuel Tank.<br>
+The Hull of a spaceship has certain dimensions which can vary for each instance of the spaceship model.
+<br>
+An Engine is characterized by its power output and the fuel consumption. To fly, the pilot must be able to start the engine.
+<br>
+To have an idea of how far a spaceship can fly before it has to refuel, we need to know it's Fuel Tank's capacity.
+
+--------------------------------
+
+Level 2:
+This level is played in the <i>Against the Clock</i> mode. In this level, you do not have lives. Instead, you must complete the level before the timer runs out.
+<br>
+You can gain extra time by shooting the targets that pop up around you in intervals with the pistol you can grab from your hips.
+<br>
+<br>
+In this level, you will have to model the different Weapon Systems of the spaceship.
+<br>
+The Cannon <i>is a</i> Weapon System (just like the <i>Shields</i> are). 
+<br>
+One thing all WeaponSystem specializations have in common is that they can be <i>active</i> (or inactive).
+<br>
+A cannon can be specified by different attributes like its <i>type of ammunition</i> or how much <i>damage</i> it can deal. Also, it can <i>shoot</i>. And, it's shooting <i>Bullets</i>.
+<br>
+Bullets are defined by their <i>caliber</i>.
+<br>
+Shields are characterized by their <i>strength</i>.
+
+--------------------------------
+
+Level 3:
+In this level, you have to find mistakes in the given model. 
+<br>
+Mistakes can either be connectors that do not make sense or classes that do not fit into the model as it is described below.
+<br>Connections can be destroyed with the sword you can access by placing your hand behind your head and pressing the <i>grab</i> button.
+<br>
+Classes can be destroyed with pistols you can grab from your hips.
+<br>
+<br>
+The <i>Hull</i> of a spaceship describes the body of the ship. Therefore, it <i>contains</i> a CargoBay, a Cockpit, and a FuelTank. However, this model must <i>only</i> show the <i>structural</i> elements of the Hull.
+<br>
+Any additions that do not strictly describe the structure must be removed.
+<br>
+Make sure to check all connections whether they generally make sense or not when thinking about spaceships.
+
+--------------------------------
+
+Level 4:
+In this level, you will model a more complete version of a spaceship with updated relationships between the different parts.
+<br>
+The spaceship contains a hull (which can not exist without the spaceship).
+<br>
+Furthermore, the ship <i>has</i> an engine (which <i>can</i> exist without the ship, for example in other vehicles).
+<br>
+Engines are again characterized by different properties like their power output, how much fuel they consume. And, it can again be started.
+<br>
+Next, the spaceship has a weapon system (whose more detailed model you already created in a previous level).
+<br>
+The hull of the ship has a fuel tank which has a certain <i>capacity</i>.
+<br>
+A freighter is a special form of a spaceship.
+<br>
+Finally, a pilot can pilot the ship.

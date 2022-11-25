@@ -1,0 +1,43 @@
+<linker>
+    <assembly fullname="UnityEngine">
+        <type fullname="UnityEngine.TerrainCollider" preserve="all"/>
+        <type fullname="UnityEngine.TerrainModule" preserve="all"/>
+        <type fullname="UnityEngine.TerrainLayer" preserve="all"/>
+
+        <type fullname="UnityEngine.VFX" preserve="all"/>
+        <type fullname="UnityEngine.VFXModule" preserve="all"/>
+        <type fullname="UnityEngine.VFXModule.VFXRenderer" preserve="all"/>
+        <type fullname="UnityEngine.VFXRenderer" preserve="all"/>
+        <type fullname="UnityEngine.VFX.VFXRenderer" preserve="all"/>
+        <type fullname="UnityEngine.Rendering" preserve="all"/>
+
+        <type fullname="UnityEngine.MeshRenderer" preserve="all"/>
+        <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all"/>
+        <type fullname="UnityEngine.MeshFilter" preserve="all"/>
+        <type fullname="UnityEngine.ParticleEmitter" preserve="all"/>
+        <type fullname="UnityEngine.ParticleAnimator" preserve="all"/>
+        <type fullname="UnityEngine.PhysicMaterial" preserve="all"/>
+        <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all"/>
+    </assembly>
+
+    <assembly fullname="UnityEngine.CoreModule">
+        <type fullname="UnityEngine.Events.ArgumentCache" preserve="all"/>
+        <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="all"/>
+        <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="all"/>
+    </assembly>
+
+    <assembly fullname="UnityEngine.UI">
+        <type fullname="UnityEngine.UI.AnimationTriggers" preserve="all"/>
+        <type fullname="UnityEngine.Events.ArgumentCache" preserve="all"/>
+    </assembly>
+
+    <assembly fullname="Assembly-CSharp">
+        <type fullname="UmlPlayerStatusResponse" preserve="all"/>
+        <type fullname="UmlPlayerStatus" preserve="all"/>
+        <type fullname="UmlCustomData" preserve="all"/>
+        <type fullname="GamificationEnginePointConcept" preserve="all"/>
+        <type fullname="UmlPlayedGame" preserve="all"/>
+        <type fullname="UmlUnlockedElement" preserve="all"/>
+        <type fullname="ObjectExtensions" preserve="all"/>
+    </assembly>
+</linker>

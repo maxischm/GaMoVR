@@ -1,0 +1,20 @@
+<Model>
+    <Classes>
+        <Class className="House" xPosition="0" yPosition="1" zPosition="0">
+            <Property propertyName="livingSpace"></Property>
+            <Property propertyName="owner"></Property>
+            <Method methodName="buy()"></Method>
+            <Method methodName="sell()"></Method>
+            <Method methodName="getOwner()"></Method>
+        </Class>
+        <Class className="Room" xPosition="5" yPosition="1" zPosition="0">
+            <Property propertyName="purpose"></Property>
+        </Class>
+        <Class className="Wall" xPosition="5" yPosition="1" zPosition="5">
+        </Class>
+    </Classes>
+    <Connectors>
+        <DirectedAssociation origin="House" target="Room" description="has"></DirectedAssociation>
+        <DirectedAssociation origin="Room" target="Wall" description="has"></DirectedAssociation>
+    </Connectors>
+</Model>

@@ -1,0 +1,94 @@
+{
+    "name": "WeaponAttachmentGrab",
+    "maps": [
+        {
+            "name": "WeaponAttachmentGrab",
+            "id": "277abc10-eceb-4142-a46d-348a46fe13fe",
+            "actions": [
+                {
+                    "name": "LeftHandWeaponGrab",
+                    "type": "Button",
+                    "id": "a7482fc1-cf56-4e75-b6e8-670ce8a2380b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightHandWeaponGrab",
+                    "type": "Button",
+                    "id": "3f6b29d7-4a4a-4fb7-b81b-b0178961a7ec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftHandShoot",
+                    "type": "Button",
+                    "id": "131ab3bd-9311-4569-bb1a-a737d670a947",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightHandShoot",
+                    "type": "Button",
+                    "id": "192bda17-2081-48e4-afe0-6fad1c4badc6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "972e21a2-5285-4201-891f-8874994f73d1",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandWeaponGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84626ced-551f-43ac-a3a6-e5b41e5a70ca",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandWeaponGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a424a8d-4183-48dc-a4c3-dfab35e9a25b",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4effa2ac-8566-4d80-9039-99a577b2b5b5",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
