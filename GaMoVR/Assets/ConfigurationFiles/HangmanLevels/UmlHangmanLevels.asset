@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302f9763a59f1b54f9b31a1b268aa070, type: 3}
+  m_Name: UmlHangmanLevels
+  m_EditorClassIdentifier: 
+  classicLevels:
+  - levelName: Tutorial
+    levelId: 0
+    levelDescription: In this tutorial level, you will create a simple UML model
+      of a house. <br> <br> For this, you can find three classes. <i>House</i>, <i>Room</i>,
+      and <i>Wall</i>. A house can be classified by its <i>livingSpace</i>, but it
+      can also be <i>bought</i>, <i>sold</i>, or the <i>owner</i> be found out. (The
+      owner is also one of its properties.) <br> <br> A house <i>has</i> rooms <br>
+      Finally, a room <i>has</i> walls and a <i>purpose</i>.
+    xmlModelString: <Model>     <Classes>         <Class className="House" xPosition="0"
+      yPosition="1" zPosition="0">             <Property propertyName="livingSpace"></Property>            
+      <Property propertyName="owner"></Property>             <Method methodName="buy()"></Method>            
+      <Method methodName="sell()"></Method>             <Method methodName="getOwner()"></Method>        
+      </Class>         <Class className="Room" xPosition="5" yPosition="1" zPosition="0">            
+      <Property propertyName="purpose"></Property>         </Class>         <Class
+      className="Wall" xPosition="5" yPosition="1" zPosition="5">         </Class>    
+      </Classes>     <Connectors>         <DirectedAssociation origin="House" target="Room"
+      description="has"></DirectedAssociation>         <DirectedAssociation origin="Room"
+      target="Wall" description="has"></DirectedAssociation>     </Connectors> </Model>
+    gameMode: 0
+    requiredModelingElements: []
+    xpReward: 200
+    initialLives: 4
+  - levelName: Spaceship Structure
+    levelId: 1
+    levelDescription: After you have completed the tutorial we will now model a spaceship.
+      <br> In this level, you will model a very rough overview of the different parts
+      a spaceship consists of. <br> Some of the relationships between parts will
+      be updated in later levels after you unlock new UML connectors. <br> The spaceship
+      <i>has</i> different elements like a Hull, an Engine, a Weapon System, and
+      a Fuel Tank.<br> The Hull of a spaceship has certain dimensions which can vary
+      for each instance of the spaceship model. <br> An Engine is characterized by
+      its power output and the fuel consumption. To fly, the pilot must be able to
+      start the engine. <br> To have an idea of how far a spaceship can fly before
+      it has to refuel, we need to know it's Fuel Tank's capacity.
+    xmlModelString: <Model>     <Classes>         <Class className="Spaceship" xPosition="2.5"
+      yPosition="1" zPosition="0">         </Class>         <Class className="Hull"
+      xPosition="5" yPosition="1" zPosition="0">             <Property propertyName="length"></Property>            
+      <Property propertyName="width"></Property>         </Class>         <Class
+      className="Engine" xPosition="5" yPosition="1" zPosition="5">             <Property
+      propertyName="powerOutput"></Property>             <Property propertyName="fuelConsumption"></Property>            
+      <Method methodName="start()"></Method>         </Class>         <Class className="WeaponSystem"
+      xPosition="5" yPosition="2" zPosition="2.5">         </Class>         <Class
+      className="FuelTank" xPosition="0" yPosition="1" zPosition="0">            
+      <Property propertyName="capacity"></Property>         </Class>     </Classes>    
+      <Connectors>         <DirectedAssociation origin="Spaceship" target="Hull"
+      description="has"></DirectedAssociation>         <DirectedAssociation origin="Spaceship"
+      target="WeaponSystem" description="has"></DirectedAssociation>         <DirectedAssociation
+      origin="Spaceship" target="FuelTank" description="has"></DirectedAssociation>        
+      <DirectedAssociation origin="Spaceship" target="Engine" description="has"></DirectedAssociation>    
+      </Connectors> </Model>
+    gameMode: 0
+    requiredModelingElements:
+    - directedAssociation
+    xpReward: 200
+    initialLives: 5
+  againstTheClockLevel:
+  - levelName: Weapon Systems
+    levelId: 2
+    levelDescription: This level is played in the <i>Against the Clock</i> mode.
+      In this level, you do not have lives. Instead, you must complete the level
+      before the timer runs out. <br> You can gain extra time by shooting the targets
+      that pop up around you in intervals with the pistol you can grab from your
+      hips. <br> <br> In this level, you will have to model the different Weapon
+      Systems of the spaceship. <br> The Cannon <i>is a</i> Weapon System (just like
+      the <i>Shields</i> are).  <br> One thing all WeaponSystem specializations have
+      in common is that they can be <i>active</i> (or inactive). <br> A cannon can
+      be specified by different attributes like its <i>type of ammunition</i> or
+      how much <i>damage</i> it can deal. Also, it can <i>shoot</i>. And, it's shooting
+      <i>Bullets</i>. <br> Bullets are defined by their <i>caliber</i>. <br> Shields
+      are characterized by their <i>strength</i>.
+    xmlModelString: <Model>     <Classes>         <Class className="WeaponSystem"
+      xPosition="0" yPosition="1" zPosition="0">             <Property propertyName="active"></Property>        
+      </Class>         <Class className="Cannon" xPosition="5" yPosition="1" zPosition="0">            
+      <Property propertyName="damagePerShot"></Property>             <Property propertyName="ammunitionType"></Property>            
+      <Method methodName="shoot()"></Method>         </Class>         <Class className="Shields"
+      xPosition="5" yPosition="1" zPosition="5">             <Property propertyName="strength"></Property>        
+      </Class>         <Class className="Bullet" xPosition="0" yPosition="1" zPosition="5">            
+      <Property propertyName="caliber"></Property>         </Class>     </Classes>    
+      <Connectors>         <Inheritance origin="Cannon" target="WeaponSystem" description=""></Inheritance>        
+      <Inheritance origin="Shields" target="WeaponSystem" description=""></Inheritance>        
+      <DirectedAssociation origin="Cannon" target="Bullet" description="shoots"></DirectedAssociation>    
+      </Connectors> </Model>
+    gameMode: 1
+    requiredModelingElements:
+    - inheritance
+    xpReward: 200
+    initialTime: 240
+  - levelName: Completing Spaceship
+    levelId: 4
+    levelDescription: In this level, you will model a more complete version of a
+      spaceship with updated relationships between the different parts. <br> The
+      spaceship contains a hull (which can not exist without the spaceship). <br>
+      Furthermore, the ship <i>has</i> an engine (which <i>can</i> exist without
+      the ship, for example in other vehicles). <br> Engines are again characterized
+      by different properties like their power output, how much fuel they consume.
+      And, it can again be started. <br> Next, the spaceship has a weapon system
+      (whose more detailed model you already created in a previous level). <br> The
+      hull of the ship has a fuel tank which has a certain <i>capacity</i>. <br>
+      A freighter is a special form of a spaceship. <br> Finally, a pilot can pilot
+      the ship.
+    xmlModelString: <Model>     <Classes>         <Class className="Spaceship" xPosition="0"
+      yPosition="1" zPosition="0">         </Class>         <Class className="Hull"
+      xPosition="0" yPosition="1" zPosition="5">         </Class>         <Class
+      className="Engine" xPosition="5" yPosition="1" zPosition="0">             <Property
+      propertyName="powerOutput"></Property>             <Property propertyName="fuelConsumption"></Property>            
+      <Method methodName="start()"></Method>         </Class>         <Class className="WeaponSystem"
+      xPosition="5" yPosition="1" zPosition="5">         </Class>         <Class
+      className="FuelTank" xPosition="10" yPosition="1" zPosition="0">            
+      <Property propertyName="capacity"></Property>         </Class>         <Class
+      className="Freighter" xPosition="-5" yPosition="1" zPosition="0">         </Class>        
+      <Class className="Pilot" xPosition="-5" yPosition="1" zPosition="5">        
+      </Class>     </Classes>     <Connectors>         <Composition origin="Hull"
+      target="Spaceship" description=""></Composition>         <Aggregation origin="WeaponSystem"
+      target="Spaceship" description=""></Aggregation>         <Aggregation origin="FuelTank"
+      target="Hull" description=""></Aggregation>         <Inheritance origin="Freighter"
+      target="Spaceship" description=""></Inheritance>         <Aggregation origin="Engine"
+      target="Spaceship" description=""></Aggregation>         <DirectedAssociation
+      origin="Pilot" target="Spaceship" description="pilots"></DirectedAssociation>    
+      </Connectors> </Model>
+    gameMode: 1
+    requiredModelingElements:
+    - inheritance
+    - aggregation
+    - composition
+    - directedAssociation
+    xpReward: 200
+    initialTime: 270
+  testModeLevels:
+  - levelName: Ship Hull
+    levelId: 3
+    levelDescription: In this level, you have to find mistakes in the given model. 
+      <br> Mistakes can either be connectors that do not make sense or classes that
+      do not fit into the model as it is described below. <br>Connections can be
+      destroyed with the sword you can access by placing your hand behind your head
+      and pressing the <i>grab</i> button. <br> Classes can be destroyed with pistols
+      you can grab from your hips. <br> <br> The <i>Hull</i> of a spaceship describes
+      the body of the ship. Therefore, it <i>contains</i> a CargoBay, a Cockpit,
+      and a FuelTank. However, this model must <i>only</i> show the <i>structural</i>
+      elements of the Hull. <br> Any additions that do not strictly describe the
+      structure must be removed. <br> Make sure to check all connections whether
+      they generally make sense or not when thinking about spaceships.
+    xmlModelString: <Model>     <Classes>         <Class className="Hull" xPosition="0"
+      yPosition="1" zPosition="0">         </Class>         <Class className="CargoBay"
+      xPosition="0" yPosition="1" zPosition="5">             <Property propertyName="storageCapacity"
+      isCreated="true"></Property>         </Class>         <Class className="Cockpit"
+      xPosition="5" yPosition="1" zPosition="0">             <Property propertyName="crewCapacity"
+      isCreated="true"></Property>             <Method methodName="enter()" isCreated="true"></Method>            
+      <Method methodName="takePilotPosition()" isCreated="true"></Method>        
+      </Class>         <Class className="FuelTank" xPosition="5" yPosition="1" zPosition="5">        
+      </Class>         <Class className="Pilot" xPosition="10" yPosition="1" zPosition="0"
+      isCorrect="false">         </Class>         <Class className="Planet" xPosition="-5"
+      yPosition="1" zPosition="0" isCorrect="false">         </Class>     </Classes>    
+      <Connectors>         <DirectedAssociation             origin="Hull"             
+      target="Planet"             description="lands on"              isCreated="true"            
+      isCorrect="false"             originAttachXPosition="-0.5"             originAttachYPosition="1"            
+      originAttachZPosition="0"             targetAttachXPosition="-4.5"            
+      targetAttachYPosition="1"             targetAttachZPosition="0"         ></DirectedAssociation>        
+      <DirectedAssociation             origin="Pilot"              target="Cockpit"            
+      description="sits in"              isCreated="true"             isCorrect="false"            
+      originAttachXPosition="9.5"             originAttachYPosition="1"            
+      originAttachZPosition="0"             targetAttachXPosition="5.51"            
+      targetAttachYPosition="1"             targetAttachZPosition="0"         ></DirectedAssociation>        
+      <Composition             origin="CargoBay"              target="Hull"            
+      description=""              isCreated="true"             isCorrect="true"            
+      originAttachXPosition="0"             originAttachYPosition="1"            
+      originAttachZPosition="4.5"             targetAttachXPosition="0"            
+      targetAttachYPosition="1"             targetAttachZPosition="0.5"         ></Composition>        
+      <Composition              origin="Cockpit"              target="Hull"             
+      description=""             isCreated="true"             isCorrect="true"            
+      originAttachXPosition="4.5"             originAttachYPosition="1"            
+      originAttachZPosition="0"             targetAttachXPosition="0.5"            
+      targetAttachYPosition="1"             targetAttachZPosition="0"         ></Composition>        
+      <Composition             origin="FuelTank"              target="Hull"             
+      description=""             isCreated="true"             isCorrect="true"            
+      originAttachXPosition="4.5"             originAttachYPosition="1"            
+      originAttachZPosition="5"             targetAttachXPosition="0"            
+      targetAttachYPosition="1"             targetAttachZPosition="0.5"         ></Composition>        
+      <Inheritance             origin="Cockpit"             target="FuelTank"            
+      description=""             isCreated="true"             isCorrect="false"            
+      originAttachXPosition="5"             originAttachYPosition="1"            
+      originAttachZPosition="0.56"             targetAttachXPosition="5"            
+      targetAttachYPosition="1"             targetAttachZPosition="4.5"         ></Inheritance>    
+      </Connectors> </Model>
+    gameMode: 2
+    requiredModelingElements:
+    - composition
+    - inheritance
+    - directedAssociation
+    xpReward: 200
+    initialLives: 3

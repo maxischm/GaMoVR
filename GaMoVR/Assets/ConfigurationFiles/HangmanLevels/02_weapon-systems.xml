@@ -1,0 +1,23 @@
+<Model>
+    <Classes>
+        <Class className="WeaponSystem" xPosition="0" yPosition="1" zPosition="0">
+            <Property propertyName="active"></Property>
+        </Class>
+        <Class className="Cannon" xPosition="5" yPosition="1" zPosition="0">
+            <Property propertyName="damagePerShot"></Property>
+            <Property propertyName="ammunitionType"></Property>
+            <Method methodName="shoot()"></Method>
+        </Class>
+        <Class className="Shields" xPosition="5" yPosition="1" zPosition="5">
+            <Property propertyName="strength"></Property>
+        </Class>
+        <Class className="Bullet" xPosition="0" yPosition="1" zPosition="5">
+            <Property propertyName="caliber"></Property>
+        </Class>
+    </Classes>
+    <Connectors>
+        <Inheritance origin="Cannon" target="WeaponSystem" description=""></Inheritance>
+        <Inheritance origin="Shields" target="WeaponSystem" description=""></Inheritance>
+        <DirectedAssociation origin="Cannon" target="Bullet" description="shoots"></DirectedAssociation>
+    </Connectors>
+</Model>

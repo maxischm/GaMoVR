@@ -1,23 +1,29 @@
-# GaMoVR
+# GaMoVR - Gamification-based Modeling Learning in Virtual Reality
 
-Gamification-based Modeling Learning in Virtual Reality
+GaMoVR is a gamified learning environment to practice modelling UML class diagrams in VR. The game contains two ways to explore UML modelling.
 
-# Gamification Engine Setup and Configuration
+A short demo video can be found [here](https://www.youtube.com/watch?v=NOQ4m_r61kA&t=1s) and a full playthrough of the complete game [here](https://drive.google.com/file/d/1_Q5-eBVNxlS7LaIrv3mDJa8Y7pvtf6fp/view?usp=sharing).
 
-1. Start the Gamification Engine following the instructions in their [Wiki](https://github.com/smartcommunitylab/smartcampus.gamification/wiki/Setup).
+This project was presented at the MODELS2022 conference and published [here](https://doi.org/10.1145/3550356.3559088).
 
-Note: You need to add the following line to the `gamification.env` file:
+Since then, the project was reworked to be made open-source. This included reworking the different 3D models, changing sounds, sprites, etc. which is why the project provided in this repository differs in looks and sounds from the videos or the screenshots of the MODELS2022 publication.
 
-```
-SPRING_DATA_MONGODB_URL=mongodb://gamification-mongo:27017/gamification
-```
+A more detailed description of the game and project structure can be found in the [Wiki](https://github.com/maxischm/GaMoVR/wiki/Game-and-Project-Structure).
 
-2. Run the configuration script found under `./Gamification-Engine-Settings/config.py` with the base URL of the gamification engine as argument. E.g. if the engine is running on localhost, run the script with the following command.
+## Hangman
 
-```
-python3 ./Gamification-Engine-Settings/config.py localhost:8010
-```
+The main activity for practicing modeling is by playing the Hangman game based on the [word guessing game](<https://en.wikipedia.org/wiki/Hangman_(game)>). There, the player has to solve different modeling tasks, e.g. creating models given a description without making more mistakes than they have lives or within a certain time frame while the Hangman is built.
 
-    The script will prompt you to enter the username and password entered during the gamification engine setup.
+## Multi-Viewpoint Modeling
 
-3. In the Unity project open the file `Assets/ConfigurationFiles/GamificationEngineConfiguration.asset` in the Inspector. Enter the base URL, username, password, and GameId (if changed from the default value in the configuration script run in Step 2).
+The learning environment also provides an environment where players can explore the relationship between a UML class diagram of a spaceship and a 3D representation of the same spaceship (an instance of the class diagram). These two views (class diagram and 3D representation) are synchronized by the application whenever the player makes changes to either view.
+
+## Setup
+
+To run the game, follow the instruction in the [Wiki](https://github.com/maxischm/GaMoVR/wiki/Setup).
+
+# License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for the full license text.
+
+Third-parts components used within this project can be found in designated folders with the respective licenses located there as well.
